@@ -7,6 +7,7 @@ public class MoveCharacter : MonoBehaviour
 	public float jumpSpeed = 8.0F; 
 	public float gravity = 20.0F; 
 	private Vector2 moveDirection = Vector2.zero;
+	private boolean isSpringed = false;
 	
 	void Start(){
 	}
@@ -20,7 +21,7 @@ public class MoveCharacter : MonoBehaviour
 			moveDirection.y = 0;
 			
 			// but if the jump button is pressed, then we do want him moving vertically
-			if (Input.GetButton("Jump"))
+			if (isSpringed)
 			{
 				moveDirection.y = jumpSpeed;
 			}
