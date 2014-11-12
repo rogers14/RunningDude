@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ClickSpawn : MonoBehaviour {
 
-	public GameObject spawn;
+	public GameObject[] spawns;
+	int selected = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +17,20 @@ public class ClickSpawn : MonoBehaviour {
 						var pos = Input.mousePosition;
 						pos = Camera.main.ScreenToWorldPoint (pos);
 			pos.z = 0;
-			Instantiate(spawn, pos, transform.rotation);
+			Instantiate(spawns[selected], pos, transform.rotation);
 				}
+		if(Input.GetKeyDown(KeyCode.Alpha1)) {
+			selected = 0;
+
+		}
+		if(Input.GetKeyDown(KeyCode.Alpha2)) {
+			selected = 1;
+			
+		}
+		if(Input.GetKeyDown(KeyCode.Alpha3)) {
+			selected = 2;
+			
+		}
 	
 	}
 }
