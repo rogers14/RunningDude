@@ -14,10 +14,9 @@ public class Spring : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter (Collider c) 
 	{
-		Debug.Log ("HIT");
 		if (c.tag == "Player")
 		{
-			//mc.
+			mc.isSpringed = true;
 		}
 	}
 }

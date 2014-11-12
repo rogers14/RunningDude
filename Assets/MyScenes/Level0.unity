@@ -644,6 +644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb9730ae25fbc341b43684e1158295d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mc: {fileID: 0}
+  springForce: 10
 --- !u!1 &750175158
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +812,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.96113729
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1193,7 +1195,6 @@ GameObject:
   - 143: {fileID: 1202521298}
   - 114: {fileID: 1202521297}
   - 114: {fileID: 1202521295}
-  - 54: {fileID: 1202521296}
   m_Layer: 0
   m_Name: 3rd Person Controller
   m_TagString: Player
@@ -1208,7 +1209,7 @@ Transform:
   m_PrefabInternal: {fileID: 864893774}
   m_GameObject: {fileID: 1202521293}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -9.40723038, y: -7.96113729, z: -.486678392}
+  m_LocalPosition: {x: -9.40723038, y: -8, z: -.486678392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 875195335}
@@ -1226,24 +1227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8479481d9ec85947a88cd2470e95bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpSpeed: 8
   gravity: 20
---- !u!54 &1202521296
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1202521293}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  yPos: -8
+  jumpPower: 20
+  isSpringed: 0
 --- !u!114 &1202521297
 MonoBehaviour:
   m_ObjectHideFlags: 0

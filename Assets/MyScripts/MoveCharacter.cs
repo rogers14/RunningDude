@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// From the internet, but I've modified it to work with my Spring script
 public class MoveCharacter : MonoBehaviour 
 {
-	public float speed = 6.0F; 
-	public float jumpSpeed = 8.0F; 
+	private float speed = 6.0F; 
+	private float jumpSpeed = 8.0F; 
 	public float gravity = 20.0F; 
+	public float yPos = -8.0f;
+	public float jumpPower = 100.0f;
 	private Vector2 moveDirection = Vector2.zero;
-	private boolean isSpringed = false;
+	public bool isSpringed = false;
 	
-	void Start(){
-	}
-	
-	void Update(){
+	void Update()
+	{
 		CharacterController player = GetComponent<CharacterController>();
+		float yPos = player.transform.position.y;
 		
 		if (player.isGrounded)
 		{
@@ -23,8 +25,10 @@ public class MoveCharacter : MonoBehaviour
 			// but if the jump button is pressed, then we do want him moving vertically
 			if (isSpringed)
 			{
-				moveDirection.y = jumpSpeed;
+				moveDirection.y = jumpPower;
 			}
+			// Reset so we only jump once
+			isSpringed = false;
 		}
 		else
 		{
