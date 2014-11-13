@@ -9,11 +9,6 @@ public class CharacterDeath : MonoBehaviour {
 	void Start () {
 		pos = gameObject.transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public void die()
 	{
