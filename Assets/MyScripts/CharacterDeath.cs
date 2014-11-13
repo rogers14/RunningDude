@@ -10,7 +10,14 @@ public class CharacterDeath : MonoBehaviour {
 		pos = gameObject.transform.position;
 	}
 
+	// Dude hits enemy or runs off edge
 	public void die()
+	{
+		gameObject.transform.position = pos;
+	}
+
+	// Player restarts level by pressing R
+	public void reset()
 	{
 		gameObject.transform.position = pos;
 	}
