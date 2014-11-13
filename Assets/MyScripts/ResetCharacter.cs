@@ -4,10 +4,12 @@ using System.Collections;
 public class ResetCharacter : MonoBehaviour {
 
 	CharacterDeath cd;
+	FinishLine fl;
 	
 	void Start()
 	{
 		cd = GameObject.FindGameObjectWithTag ("Player").GetComponent<CharacterDeath> ();
+		fl = GameObject.FindGameObjectWithTag ("Finish").GetComponentInChildren<FinishLine> ();
 	}
 	
 	void Update()
@@ -23,6 +25,9 @@ public class ResetCharacter : MonoBehaviour {
 			{
 				DestroyObject(items[i]);
 			}
+
+			// Resets text
+			fl.finishText.text = "";
 		}
 	}
 }
