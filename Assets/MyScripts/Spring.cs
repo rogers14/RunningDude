@@ -10,8 +10,7 @@ public class Spring : MonoBehaviour {
 	{
 		mc = GameObject.FindGameObjectWithTag ("Player").GetComponent<MoveCharacter> ();
 	}
-	
-	// Update is called once per frame
+
 	void OnTriggerEnter (Collider c) 
 	{
 		if (c.tag == "Player")
