@@ -3,13 +3,13 @@ using System.Collections;
 
 public class ClickSpawn : MonoBehaviour {
 
-	public ScoreHandler sh;
+	ScoreHandler sh;
 	public GameObject[] spawns;
 	int selected = 0;
 
 	// Use this for initialization
 	void Start () {
-	
+		sh = GameObject.FindGameObjectWithTag ("GameController").GetComponent<ScoreHandler> ();
 	}
 	
 	// Update is called once per frame

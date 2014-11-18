@@ -3,12 +3,13 @@ using System.Collections;
 
 public class FinishLine : MonoBehaviour {
 
-	public ScoreHandler sh;
+	ScoreHandler sh;
 	public GUIText finishText;
 
 	void Start()
 	{
 		finishText.text = "";
+		sh = GameObject.FindGameObjectWithTag ("GameController").GetComponent<ScoreHandler> ();
 	}
 
 	void OnTriggerEnter(Collider c)

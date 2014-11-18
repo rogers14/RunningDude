@@ -3,11 +3,14 @@ using System.Collections;
 
 public class CharacterDeath : MonoBehaviour {
 
-	public ScoreHandler sh;
+	ScoreHandler sh;
+	MoveCharacter mc;
 	Vector3 pos;
 
 	// Use this for initialization
 	void Start () {
+		mc = GameObject.FindGameObjectWithTag ("Player").GetComponent<MoveCharacter> ();
+		sh = GameObject.FindGameObjectWithTag ("GameController").GetComponent<ScoreHandler> ();
 		pos = gameObject.transform.position;
 	}
 
@@ -16,6 +19,7 @@ public class CharacterDeath : MonoBehaviour {
 	{
 		sh.death ();
 		gameObject.transform.position = pos;
+		mc.speed = (mc.speed > 0) ? mc.speed : -mc.speed;
 	}
 
 	// Player restarts level by pressing R
@@ -23,5 +27,6 @@ public class CharacterDeath : MonoBehaviour {
 	{
 		sh.death ();
 		gameObject.transform.position = pos;
+		mc.speed = (mc.speed > 0) ? mc.speed : -mc.speed;
 	}
 }
