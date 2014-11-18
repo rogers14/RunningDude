@@ -19,14 +19,20 @@ public class ClickSpawn : MonoBehaviour {
 			pos.z = 0;
 			Instantiate(spawns[selected], pos, transform.rotation);
 				}
+
+		// Spring
 		if(Input.GetKeyDown(KeyCode.Alpha1)) {
 			selected = 0;
+		}
 
-		}
+		// Platform
 		if(Input.GetKeyDown(KeyCode.Alpha2)) {
-			selected = 1;
-			
+			selected = 1;	
 		}
-	
+
+		// Wall
+		if(Input.GetKeyDown(KeyCode.Alpha3)) {
+			selected = 2;	
+		}
 	}
 }

@@ -4,7 +4,7 @@ using System.Collections;
 // From the internet, but I've modified it to work with my Spring script
 public class MoveCharacter : MonoBehaviour 
 {
-	private float speed = 6.0F; 
+	public float speed = 6.0F; 
 	private float jumpSpeed = 8.0F; 
 	public float gravity = 20.0F; 
 	public float yPos = -8.0f;
@@ -42,4 +42,5 @@ public class MoveCharacter : MonoBehaviour
 		// finally, we actually apply the movement to the player
 		player.Move(moveDirection * Time.deltaTime);
 	}
+	
 }

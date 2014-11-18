@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Spring : MonoBehaviour {
+public class TurnAround : MonoBehaviour {
 
 	MoveCharacter mc;
-	public float springForce = 10.0f;
-	public AudioSource sound;
 
-	void Start()
+	// Use this for initialization
+	void Start ()
 	{
 		mc = GameObject.FindGameObjectWithTag ("Player").GetComponent<MoveCharacter> ();
 	}
 
+	// Reverses direction (HAS BUGS!)
 	void OnTriggerEnter (Collider c) 
 	{
 		if (c.tag == "Player")
 		{
-			mc.isSpringed = true;
-			sound.Play();
+			mc.speed *= -1.0f;
 		}
 	}
 }
