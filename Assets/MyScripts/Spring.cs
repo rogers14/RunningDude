@@ -5,6 +5,7 @@ public class Spring : MonoBehaviour {
 
 	public MoveCharacter mc;
 	public float springForce = 10.0f;
+	public AudioSource sound;
 
 	void Start()
 	{
@@ -16,6 +17,7 @@ public class Spring : MonoBehaviour {
 		if (c.tag == "Player")
 		{
 			mc.isSpringed = true;
+			sound.Play();
 		}
 	}
 }

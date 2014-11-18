@@ -27,10 +27,6 @@ public class ClickSpawn : MonoBehaviour {
 			selected = 1;
 			
 		}
-		if(Input.GetKeyDown(KeyCode.Alpha3)) {
-			selected = 2;
-			
-		}
 	
 	}
 }
