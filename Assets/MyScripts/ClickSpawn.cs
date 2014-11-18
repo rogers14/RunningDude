@@ -17,7 +17,8 @@ public class ClickSpawn : MonoBehaviour {
 						var pos = Input.mousePosition;
 						pos = Camera.main.ScreenToWorldPoint (pos);
 			pos.z = 0;
-			Instantiate(spawns[selected], pos, transform.rotation);
+			Object instance = Instantiate(spawns[selected], pos, spawns[selected].transform.rotation);
+
 				}
 
 		// Spring
