@@ -3,6 +3,7 @@ using System.Collections;
 
 public class FinishLine : MonoBehaviour {
 
+	public ScoreHandler sh;
 	public GUIText finishText;
 
 	void Start()
@@ -12,6 +13,6 @@ public class FinishLine : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c)
 	{
-		finishText.text = "You Win!";
+		finishText.text = "You Win! Score: " + sh.score;
 	}
 }

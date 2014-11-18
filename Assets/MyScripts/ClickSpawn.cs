@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ClickSpawn : MonoBehaviour {
 
+	public ScoreHandler sh;
 	public GameObject[] spawns;
 	int selected = 0;
 
@@ -18,7 +19,7 @@ public class ClickSpawn : MonoBehaviour {
 						pos = Camera.main.ScreenToWorldPoint (pos);
 			pos.z = 0;
 			Object instance = Instantiate(spawns[selected], pos, spawns[selected].transform.rotation);
-
+			sh.itemPlace();
 				}
 
 		// Spring
