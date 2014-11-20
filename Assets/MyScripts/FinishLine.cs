@@ -14,6 +14,11 @@ public class FinishLine : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c)
 	{
-		finishText.text = "You Win! Score: " + sh.score;
+		if (c.tag == "Player") {
+						finishText.text = "You Win! Score: " + sh.score;
+			if(Application.loadedLevel == 0) {
+			   Application.LoadLevel (1);
+			   }
+				}
 	}
 }
