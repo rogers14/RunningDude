@@ -11,10 +11,11 @@ public class MoveCharacter : MonoBehaviour
 	public float jumpPower = 100.0f;
 	private Vector2 moveDirection = Vector2.zero;
 	public bool isSpringed = false;
+	public CharacterController player;
 	
 	void Update()
 	{
-		CharacterController player = GetComponent<CharacterController>();
+		player = GetComponent<CharacterController>();
 		float yPos = player.transform.position.y;
 		
 		if (player.isGrounded)

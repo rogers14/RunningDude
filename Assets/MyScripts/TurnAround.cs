@@ -17,6 +17,7 @@ public class TurnAround : MonoBehaviour {
 		if (c.tag == "Player")
 		{
 			mc.speed *= -1.0f;
+			mc.player.transform.rotation = Quaternion.Inverse(mc.player.transform.rotation);
 		}
 	}
 }
