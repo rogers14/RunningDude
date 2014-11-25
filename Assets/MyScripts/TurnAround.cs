@@ -12,7 +12,7 @@ public class TurnAround : MonoBehaviour {
 	}
 
 	// Reverses direction (HAS BUGS!)
-	void OnTriggerExit (Collider c) 
+	void OnTriggerEnter (Collider c) 
 	{
 		if (c.tag == "Player")
 		{

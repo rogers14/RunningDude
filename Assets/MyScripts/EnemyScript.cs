@@ -18,9 +18,11 @@ public class EnemyScript : MonoBehaviour {
 		Vector3 pos = gameObject.transform.position;
 		pos.x -= speed;
 		gameObject.transform.position = pos;
-		if (pos.x < -16)
-						Destroy (gameObject);
-	
+
+		if (pos.x < -16 || pos.x > 16)
+		{
+			speed = -speed;
+		}
 	}
 
 	void OnTriggerEnter (Collider c) 
@@ -28,13 +30,14 @@ public class EnemyScript : MonoBehaviour {
 		if (c.tag == "Player")
 		{
 			cd.die();
-			Destroy(gameObject);
+			//Destroy(gameObject);
 		}
 	}
 
+	// BUGS -- spawns a bunch of enemies instead of resetting the original
+	// Also, doesn't work if enemy was killed . . .
 	public void Reset()
 	{
-		Instantiate (GameObject.Find ("Enemy"));
 		gameObject.transform.position = startPos;
 	}
 }

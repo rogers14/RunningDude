@@ -8,11 +8,13 @@ public class CharacterDeath : MonoBehaviour {
 	Vector3 pos;
 	int deaths;
 	GameObject deathCounter;
+	EnemyScript en;
 
 	// Use this for initialization
 	void Start () {
 		mc = GameObject.FindGameObjectWithTag ("Player").GetComponent<MoveCharacter> ();
 		sh = GameObject.FindGameObjectWithTag ("GameController").GetComponent<ScoreHandler> ();
+		en = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyScript>();
 		pos = gameObject.transform.position;
 		deaths = 0;
 		deathCounter = GameObject.Find ("DeathCounter");
@@ -22,6 +24,8 @@ public class CharacterDeath : MonoBehaviour {
 	public void die()
 	{
 		sh.death ();
+		// Resets Enemies
+		en.Reset();
 		deaths++;
 		deathCounter.guiText.text = "Deaths: " + deaths;
 		gameObject.transform.position = pos;
