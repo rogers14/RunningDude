@@ -20,4 +20,13 @@ public class Spring : MonoBehaviour {
 			sound.Play();
 		}
 	}
+
+	// To hopefully stop weird jumping
+	void OnTriggerExit (Collider c) 
+	{
+		if (c.tag == "Player")
+		{
+			mc.isSpringed = false;
+		}
+	}
 }

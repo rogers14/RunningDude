@@ -5,10 +5,12 @@ public class EnemyScript : MonoBehaviour {
 
 	CharacterDeath cd;
 	public float speed = .05f;
+	Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
 		cd = GameObject.FindGameObjectWithTag ("Player").GetComponent<CharacterDeath> ();
+		startPos = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -28,5 +30,11 @@ public class EnemyScript : MonoBehaviour {
 			cd.die();
 			Destroy(gameObject);
 		}
+	}
+
+	public void Reset()
+	{
+		Instantiate (GameObject.Find ("Enemy"));
+		gameObject.transform.position = startPos;
 	}
 }

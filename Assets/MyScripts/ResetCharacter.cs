@@ -5,11 +5,13 @@ public class ResetCharacter : MonoBehaviour {
 
 	CharacterDeath cd;
 	FinishLine fl;
+	EnemyScript en;
 	
 	void Start()
 	{
 		cd = GameObject.FindGameObjectWithTag ("Player").GetComponent<CharacterDeath> ();
 		fl = GameObject.FindGameObjectWithTag ("Finish").GetComponentInChildren<FinishLine> ();
+		en = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyScript>();
 	}
 	
 	void Update()
@@ -28,6 +30,9 @@ public class ResetCharacter : MonoBehaviour {
 
 			// Resets text
 			fl.finishText.text = "";
+
+			// Resets Enemies
+			en.Reset();
 		}
 	}
 }
