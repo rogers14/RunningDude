@@ -360,7 +360,7 @@ function Update() {
 	if (IsGrounded())
 	{
 		
-		transform.rotation = Quaternion.LookRotation(moveDirection);
+		//transform.rotation = Quaternion.LookRotation(moveDirection);
 			
 	}	
 	else
@@ -369,7 +369,7 @@ function Update() {
 		xzMove.y = 0;
 		if (xzMove.sqrMagnitude > 0.001)
 		{
-			transform.rotation = Quaternion.LookRotation(xzMove);
+			//transform.rotation = Quaternion.LookRotation(xzMove);
 		}
 	}	
 	

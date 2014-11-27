@@ -11,14 +11,14 @@ public class TurnAround : MonoBehaviour {
 		mc = GameObject.FindGameObjectWithTag ("Player").GetComponent<MoveCharacter> ();
 	}
 
-	// Reverses direction (HAS BUGS!)
+	// Reverses direction (WORKS PERFECTLY)
 	void OnTriggerEnter (Collider c) 
 	{
 		if (c.tag == "Player")
 		{
 			mc.speed *= -1.0f;
-			// This should reverse the character controller, but it doesn't work correctly for some reason
-			mc.player.transform.rotation = Quaternion.Inverse(mc.player.transform.rotation);
+			// All hail Dan
+			mc.player.transform.rotation = Quaternion.AngleAxis(180, Vector3.up) * mc.player.transform.rotation;
 		}
 	}
 }
