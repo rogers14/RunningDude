@@ -12,7 +12,13 @@ public class MoveCharacter : MonoBehaviour
 	private Vector2 moveDirection = Vector2.zero;
 	public bool isSpringed = false;
 	public CharacterController player;
-	
+	public Quaternion startQ;
+
+	void Start()
+	{
+		player = GetComponent<CharacterController>();
+		startQ = player.transform.rotation;
+	}
 	void Update()
 	{
 		player = GetComponent<CharacterController>();
