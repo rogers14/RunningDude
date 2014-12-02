@@ -11,8 +11,10 @@ EditorBuildSettings:
     path: Assets/MyScenes/Level5.unity
   - enabled: 1
     path: Assets/MyScenes/Level1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/MyScenes/DiscardLevel4.unity
+  - enabled: 1
+    path: Assets/MyScenes/Level2.unity
   - enabled: 1
     path: Assets/MyScenes/Level3.unity
   - enabled: 1
