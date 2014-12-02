@@ -5,6 +5,8 @@ public class FinishLine : MonoBehaviour {
 
 	ScoreHandler sh;
 	public GUIText finishText;
+	public AudioSource sound;
+
 
 	void Start()
 	{
@@ -14,8 +16,8 @@ public class FinishLine : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c)
 	{
+		sound.Play();
 		if (c.tag == "Player") {
-						finishText.text = "You beat the level! Score: " + sh.score;
 			if(Application.loadedLevel == 0) {
 				NextLevel(1);
 			   }
