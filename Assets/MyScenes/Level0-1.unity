@@ -589,6 +589,14 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2300028, guid: b6c98e93518315e4ea85f60413454f40, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5795cce3092baed46a35f50ddf768ae0, type: 2}
+    - target: {fileID: 2300034, guid: b6c98e93518315e4ea85f60413454f40, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5795cce3092baed46a35f50ddf768ae0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6c98e93518315e4ea85f60413454f40, type: 2}
   m_RootGameObject: {fileID: 276842885}
@@ -1092,6 +1100,7 @@ MonoBehaviour:
   - {fileID: 100008, guid: a6450a5d586f5a5488fc2de479776aa9, type: 2}
   - {fileID: 100000, guid: a8d6c13197529bf4fa35d174f5dcc78c, type: 2}
   - {fileID: 100002, guid: a090e5b14b963c046a21bdf88ce32c4f, type: 2}
+  images: []
 --- !u!4 &627099686
 Transform:
   m_ObjectHideFlags: 0
@@ -2129,6 +2138,7 @@ MonoBehaviour:
   jumpPower: 20
   isSpringed: 0
   player: {fileID: 0}
+  startQ: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1202521296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,7 +2561,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 3c338b065d9202d458b2ddb70c1bc14d, type: 2}
+  - {fileID: 2100000, guid: 5795cce3092baed46a35f50ddf768ae0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2890,7 +2900,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 3c338b065d9202d458b2ddb70c1bc14d, type: 2}
+  - {fileID: 2100000, guid: 5795cce3092baed46a35f50ddf768ae0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
