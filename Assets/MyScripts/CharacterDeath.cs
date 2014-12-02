@@ -26,6 +26,7 @@ public class CharacterDeath : MonoBehaviour {
 		deathCounter.guiText.text = "Deaths: " + deaths;
 		gameObject.transform.position = pos;
 		mc.speed = (mc.speed > 0) ? mc.speed : -mc.speed;
+		mc.player.transform.rotation = mc.startQ;
 	}
 
 	// Player restarts level by pressing R
