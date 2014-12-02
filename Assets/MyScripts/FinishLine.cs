@@ -17,26 +17,36 @@ public class FinishLine : MonoBehaviour {
 		if (c.tag == "Player") {
 						finishText.text = "You beat the level! Score: " + sh.score;
 			if(Application.loadedLevel == 0) {
-			   Application.LoadLevel (1);
+				NextLevel(1);
 			   }
 			else if(Application.loadedLevel == 1) {
-				Application.LoadLevel (2);
+				NextLevel(2);
 			}
 			else if(Application.loadedLevel == 2) {
-				Application.LoadLevel (3);
+				NextLevel(3);
 			}
 			else if(Application.loadedLevel == 3) {
-				Application.LoadLevel (4);
+				NextLevel(4);
 			}
 			else if(Application.loadedLevel == 4) {
-				Application.LoadLevel (5);
+				NextLevel(5);
 			}
 			else if(Application.loadedLevel == 5) {
-				Application.LoadLevel (6);
+				NextLevel(6);
 			}
 			else if(Application.loadedLevel == 6) {
-				finishText.text = "You Win!";
+				finishText.text = "You win! Score: " + sh.score;
 			}
 		}
+	}
+
+	public void NextLevel(int levelNum) {
+		StartCoroutine(ResetCR(levelNum));
+	}
+	
+	IEnumerator ResetCR(int levelNum) {
+		finishText.text = "You beat the level! Score: " + sh.score;
+		yield return new WaitForSeconds(3);
+		Application.LoadLevel (levelNum);
 	}
 }
