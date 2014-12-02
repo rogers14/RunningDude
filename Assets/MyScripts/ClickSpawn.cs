@@ -17,6 +17,7 @@ public class ClickSpawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//left click to place item
 		if (Input.GetMouseButtonDown (0)) {
 						var pos = Input.mousePosition;
 						pos = Camera.main.ScreenToWorldPoint (pos);
@@ -24,6 +25,17 @@ public class ClickSpawn : MonoBehaviour {
 			Object instance = Instantiate(spawns[selected], pos, spawns[selected].transform.rotation);
 			sh.itemPlace();
 				}
+		//right click to remove item
+		if (Input.GetMouseButtonDown (1)) {
+			Vector3 pos = Input.mousePosition;
+			pos = Camera.main.ScreenToWorldPoint (pos);
+			RaycastHit hit = new RaycastHit();
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			if (Physics.Raycast(pos, Vector3.forward, out hit, 9.99f)){
+				if(hit.collider.tag == "PlacedItem")
+					Destroy(hit.collider.gameObject);
+			}
+		}
 
 		// Spring
 		if(Input.GetKeyDown(KeyCode.Alpha1)) {
