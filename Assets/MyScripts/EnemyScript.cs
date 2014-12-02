@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour {
 		pos.x -= speed;
 		gameObject.transform.position = pos;
 
-		if (pos.x < -8 || pos.x > 7)
+		if (pos.x < -16 || pos.x > 16)
 		{
 			speed = -speed;
 		}
