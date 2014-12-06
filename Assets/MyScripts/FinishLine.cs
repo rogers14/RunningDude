@@ -6,10 +6,17 @@ public class FinishLine : MonoBehaviour {
 	ScoreHandler sh;
 	public GUIText finishText;
 	public AudioSource sound;
+	private GameObject player;
+	private Animation animation;
+	private MoveCharacter moveScript;
+	public AnimationClip dance;
 
 
 	void Start()
 	{
+		player = GameObject.FindGameObjectWithTag ("Player");
+		animation = player.GetComponent<Animation> ();
+		moveScript = player.GetComponent<MoveCharacter> ();
 		finishText.text = "";
 		sh = GameObject.FindGameObjectWithTag ("GameController").GetComponent<ScoreHandler> ();
 	}
@@ -47,6 +54,9 @@ public class FinishLine : MonoBehaviour {
 	}
 	
 	IEnumerator ResetCR(int levelNum) {
+		moveScript.player.transform.rotation = Quaternion.AngleAxis(90, Vector3.up) * moveScript.player.transform.rotation;
+		moveScript.enabled = false;
+		animation.Play (dance.name);
 		finishText.text = "You beat the level! Score: " + sh.score;
 		yield return new WaitForSeconds(3);
 		Application.LoadLevel (levelNum);

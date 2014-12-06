@@ -13,19 +13,26 @@ public class MoveCharacter : MonoBehaviour
 	public bool isSpringed = false;
 	public CharacterController player;
 	public Quaternion startQ;
+	private Animation animation;
+	public AnimationClip run;
+	public AnimationClip jump;
+	public AnimationClip fall;
+
 
 	void Start()
 	{
 		player = GetComponent<CharacterController>();
 		startQ = player.transform.rotation;
+		animation = GetComponent<Animation> ();
+		animation [run.name].speed = 2f;
 	}
 	void Update()
 	{
-		player = GetComponent<CharacterController>();
 		float yPos = player.transform.position.y;
 		
 		if (player.isGrounded)
 		{
+			animation.Play(run.name);
 			// if player is on the ground, we normally don't want to move him vertically
 			moveDirection.y = 0;
 			
@@ -33,6 +40,7 @@ public class MoveCharacter : MonoBehaviour
 			if (isSpringed)
 			{
 				moveDirection.y = jumpPower;
+				animation.Play(jump.name);
 			}
 			// Reset so we only jump once
 			isSpringed = false;
@@ -41,6 +49,10 @@ public class MoveCharacter : MonoBehaviour
 		{
 			// if player is not on the ground, then apply gravity to him
 			moveDirection.y -= gravity * Time.deltaTime;
+
+			//for some reason isGrounded randomly returns false even if the character is grounded
+			//so I'm getting a weird thing where it tries to play both animations
+			//animation.Play(fall.name);
 		}
 		
 		// constantly move horizontally
